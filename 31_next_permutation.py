@@ -13,44 +13,36 @@ class Solution:
         :type nums: List[int]
         :rtype: void Do not return anything, modify nums in-place instead.
         """
-        n = len(nums)-1
+       n = len(nums)-1
         
         if n<1:
-            return nums
-        
-        memo = {}
-        result = []
-        
-        for i in range(0, 10):
-            memo[i]=0
-            
+            return 
         
         
-        memo[nums[n]]+=1
         while n>0 and nums[n-1]>=nums[n]:
             n-=1
-            memo[nums[n-1]]+=1
+            
             
         if n==0:
-            return self.dict_to_list(memo)
+            nums = nums.reverse()
+            return 
         
-        for j in range(nums[n-1]+1, 10):
-            if memo[j]!=0:
-                memo[nums[n-1]]+=1
-                memo[j]-=1
-                nums[n-1] = j
+        for j in range(len(nums)-1, n-1,-1):
+            if nums[j]>nums[n-1]:
+                
+                nums[n-1], nums[j] = nums[j], nums[n-1]
                 break
         
-        return nums[0:n]+self.dict_to_list(memo)
+        print(nums)
+        nums[n:] = nums[n:][::-1]
+        print(nums)
+        return
         
     
-    def dict_to_list(self, dict):
-        a=[]
-        for i in dict.keys():
-            a=a+[i]*dict[i]
-            
-        return a
     
 s=Solution()
-a=[16,27,25,23,25,16,12,9,1,2,7,20,19,23,16,0,6,22,16,11,8,27,9,2,20,2,13,7,25,29,12,12,18,29,27,13,16,1,22,9,3,21,29,14,7,8,14,5,0,23,16,1,20]
-print(s.nextPermutation(a))
+a=[1,3,2]
+s.nextPermutation(a)
+print(a)
+    
+
