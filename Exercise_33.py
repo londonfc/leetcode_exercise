@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Sat Jun 23 22:37:02 2018
+Created on Sat Jun 23 22:37:01 2018
 
 @author: ruicao
 """
