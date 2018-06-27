@@ -71,7 +71,4 @@ class Solution:
             
         return -1
 
-sol = Solution()
-nums=[2,3,4,5,6,7,8,9,1]
-target =4
-print(sol.search(nums, 9))
+
